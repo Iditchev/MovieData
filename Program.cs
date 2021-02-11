@@ -17,41 +17,41 @@ namespace MovieData
 
             if (resp == "1")
             {
-           StreamReader sr = new StreamReader("movies.csv");
+                StreamReader sr = new StreamReader("movies.csv");
                 while (!sr.EndOfStream)
                 {
                     string line = sr.ReadLine();
                     string[] arr = line.Split(',');
                     string movieID = arr[0];
-                    
-                    string genres = arr[arr.Length-1];
+
+                    string genres = arr[arr.Length - 1];
                     string[] arrgenres = genres.Split('|');
 
-                    
+
 
                     // display array data
                     int i;
-                    for (i = 0; i < arr.Length-1; i ++)
+                    for (i = 0; i < arr.Length - 1; i++)
                     {
-                        Console.Write("{0,-15}",arr[i]);
+                        Console.Write("{0,-15}", arr[i]);
                     }
-                        int j;
-                        for(j = 0; j < arrgenres.Length; j ++)
-                        {
-                            Console.Write("{0,3}",arrgenres[j]);
-                        }
-                    
-                    
-                    
+                    int j;
+                    for (j = 0; j < arrgenres.Length; j++)
+                    {
+                        Console.Write("{0,3}", arrgenres[j]);
+                    }
+                        Console.WriteLine();
+
+                }
             }
             else if (resp == "2")
             {
 
                 // read data from file
-                
 
-                }
-                sr.Close();
+
+            }
+                
 
             }
 
@@ -62,7 +62,3 @@ namespace MovieData
 
 
     }
-}
-    
-
-
