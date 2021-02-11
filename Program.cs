@@ -2,7 +2,7 @@
 using System.IO;
 using System.Linq;
 
-namespace SleepData
+namespace MovieData
 {
     class Program
     {
@@ -21,14 +21,12 @@ namespace SleepData
                 while (!sr.EndOfStream)
                 {
                     string line = sr.ReadLine();
-                    string[] arr = line.Split(',');
-                    string week = arr[0];
-                    DateTime sleepweek = Convert.ToDateTime(week);
-                    string hours = arr[1];
-                    string[] numbers = hours.Split('|');
-                    int[] newnumbers = Array.ConvertAll(numbers, int.Parse);
-                    double total = newnumbers.Sum();
-                    double average = (total / 7);
+                    string[] arr = line.Split('|');
+                    string movie = arr[0];
+                    
+                    string genres = arr[1];
+                    string[] moviedetails = movie.Split(',');
+                    string[] arrgenres = genres.Split('|');
 
                     // display array data
                     
