@@ -1,0 +1,12 @@
+/Users/izabelditchev/Projects/MovieData/MovieData/bin/Debug/netcoreapp3.1/MovieData.deps.json
+/Users/izabelditchev/Projects/MovieData/MovieData/bin/Debug/netcoreapp3.1/MovieData.runtimeconfig.json
+/Users/izabelditchev/Projects/MovieData/MovieData/bin/Debug/netcoreapp3.1/MovieData.runtimeconfig.dev.json
+/Users/izabelditchev/Projects/MovieData/MovieData/bin/Debug/netcoreapp3.1/MovieData.dll
+/Users/izabelditchev/Projects/MovieData/MovieData/bin/Debug/netcoreapp3.1/MovieData.pdb
+/Users/izabelditchev/Projects/MovieData/MovieData/obj/Debug/netcoreapp3.1/MovieData.csprojAssemblyReference.cache
+/Users/izabelditchev/Projects/MovieData/MovieData/obj/Debug/netcoreapp3.1/MovieData.AssemblyInfoInputs.cache
+/Users/izabelditchev/Projects/MovieData/MovieData/obj/Debug/netcoreapp3.1/MovieData.AssemblyInfo.cs
+/Users/izabelditchev/Projects/MovieData/MovieData/obj/Debug/netcoreapp3.1/MovieData.csproj.CoreCompileInputs.cache
+/Users/izabelditchev/Projects/MovieData/MovieData/obj/Debug/netcoreapp3.1/MovieData.dll
+/Users/izabelditchev/Projects/MovieData/MovieData/obj/Debug/netcoreapp3.1/MovieData.pdb
+/Users/izabelditchev/Projects/MovieData/MovieData/obj/Debug/netcoreapp3.1/MovieData.genruntimeconfig.cache

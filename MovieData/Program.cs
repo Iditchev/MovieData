@@ -30,19 +30,21 @@ namespace MovieData
 
 
                     // display array data
+                    Console.Write("{0,-10}", movieID);
                     int i;
-                    for (i = 0; i < arr.Length - 1; i++)
+                    for (i = 1; i < arr.Length - 1; i++)
                     {
-                        Console.Write("{0,-15}", arr[i]);
+                        Console.Write("{0,10}", arr[i]);
                     }
                     int j;
-                    for (j = 0; j < arrgenres.Length; j++)
+                   for (j = 0; j < arrgenres.Length; j++)
                     {
-                        Console.Write("{0,3}", arrgenres[j]);
-                    }
+                        Console.Write("{0,10}", arrgenres[j]);
+                   }
 
-
+                    Console.WriteLine();
                 }
+               
             }
             else if (resp == "2")
             {
