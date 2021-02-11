@@ -21,19 +21,28 @@ namespace MovieData
                 while (!sr.EndOfStream)
                 {
                     string line = sr.ReadLine();
-                    string[] arr = line.Split('|');
-                    string movie = arr[0];
+                    string[] arr = line.Split(',');
+                    string movieID = arr[0];
                     
-                    string genres = arr[1];
-                    string[] moviedetails = movie.Split(',');
+                    string genres = arr[arr.Length-1];
                     string[] arrgenres = genres.Split('|');
 
-                    // display array data
                     
-                    Console.WriteLine("Week Of {0:MMM}, {0:dd}, {0:yyyy}", sleepweek);
-                    Console.WriteLine(" Mo Tu We Th Fr Sa Su Tot Avg");
-                    Console.WriteLine(" -- -- -- -- -- -- -- --- ---");
-                    Console.WriteLine("{0,3}{1,3}{2,3}{3,3}{4,3}{5,3}{6,3} {7,3} {8,4:N1}", numbers[0], numbers[1], numbers[2], numbers[3], numbers[4], numbers[5], numbers[6], total, average);
+
+                    // display array data
+                    int i;
+                    for (i = 0; i < arr.Length-1; i ++)
+                    {
+                        Console.Write("{0,-15}",arr[i]);
+                    }
+                        int j;
+                        for(j = 0; j < arrgenres.Length; j ++)
+                        {
+                            Console.Write("{0,3}",arrgenres[j]);
+                        }
+                    
+                    
+                    
             }
             else if (resp == "2")
             {
