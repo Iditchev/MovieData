@@ -1,14 +1,14 @@
-﻿<Properties StartupConfiguration="{405AF3C2-0F0B-44C2-A8CA-5AEF18DFC0D7}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="MovieData/Program.cs">
+﻿<Properties StartupConfiguration="{EB664BFD-BD17-409F-8B27-F041E6701DF2}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Program.cs">
     <Files>
-      <File FileName="MovieData/Program.cs" Line="48" Column="14" />
+      <File FileName="Program.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="MovieData" expanded="True">
             <Node name="MovieData" expanded="True">
-              <Node name="movies.csv" selected="True" />
+              <Node name="Program.cs" selected="True" />
             </Node>
           </Node>
         </State>
