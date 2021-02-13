@@ -73,8 +73,36 @@ namespace MovieData
                         Console.WriteLine("Please enter movie Genre(s), seperate each with a comma if there are multiple");
                         string movieGenres = Console.ReadLine();
                         string[] movieGenresArr = movieGenres.Split(',');
+                        int numberGenre = movieGenresArr.Length;
+                        int linecount = 0;
+                        foreach (var line in File.ReadAllLines("movies.csv"))
+                        {
+                            
+                            linecount ++;
+                            
+                            if (line.Contains(movieTitle))
+                            {
+                                Console.WriteLine("This movie Title already exists in data, please enter a new movie or exit");
+                                break;
+                            }
+
+                     
+                       }
+                            using (StreamWriter sw = File.AppendText("movies.csv"))
+                             {
+                                sw.WriteLine($"{linecount},{movieTitle}({movieYear}),");
+                                foreach (string genre in movieGenresArr)
+                                sw.Write($"{string.Join("|", movieGenresArr)}");
+                                
+                             }	
+
                     }
-                } while(result == 0 );
+
+                    else
+                    {
+                        Console.WriteLine("Invalid Input, please try again");
+                    }
+                } while(result != 0 );
 
 
             }
