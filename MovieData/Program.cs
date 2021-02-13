@@ -64,7 +64,7 @@ namespace MovieData
                     Console.WriteLine("Enter 1 to add a movie");
                     Console.WriteLine("Enter 0 to stop");
                     bool input = Int32.TryParse(Console.ReadLine(), out result);
-                    if (input)
+                    if (result == 1)
                     {
                         Console.WriteLine("Please enter movie title");
                         string movieTitle = Console.ReadLine();
@@ -85,19 +85,22 @@ namespace MovieData
                                 Console.WriteLine("This movie Title already exists in data, please enter a new movie or exit");
                                 break;
                             }
-
+                        
                      
                        }
+                            
                             using (StreamWriter sw = File.AppendText("movies.csv"))
                              {
-                                sw.WriteLine($"{linecount},{movieTitle}({movieYear}),");
-                                foreach (string genre in movieGenresArr)
-                                sw.Write($"{string.Join("|", movieGenresArr)}");
-                                
+                                sw.WriteLine($"{linecount},{movieTitle}({movieYear}),{string.Join("|", movieGenresArr)}");
+                
+                                sw.Close();
                              }	
-
+                            
                     }
-
+                        if (result == 0)
+                        {
+                            break;
+                        }
                     else
                     {
                         Console.WriteLine("Invalid Input, please try again");
