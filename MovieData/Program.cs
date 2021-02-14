@@ -74,11 +74,12 @@ namespace MovieData
                         string movieGenres = Console.ReadLine();
                         string[] movieGenresArr = movieGenres.Split(',');
                         int numberGenre = movieGenresArr.Length;
-                        int linecount = 0;
+                        Random rnd = new Random();
+                        int movieID = rnd.Next(164980,200000);
                         foreach (var line in File.ReadAllLines("movies.csv"))
                         {
                             
-                            linecount ++;
+                            
                             
                             if (line.Contains(movieTitle))
                             {
@@ -91,7 +92,7 @@ namespace MovieData
                             
                             using (StreamWriter sw = File.AppendText("movies.csv"))
                              {
-                                sw.WriteLine($"{linecount},{movieTitle}({movieYear}),{string.Join("|", movieGenresArr)}");
+                                sw.WriteLine($"{},{movieTitle}({movieYear}),{string.Join("|", movieGenresArr)}");
                 
                                 sw.Close();
                              }	
