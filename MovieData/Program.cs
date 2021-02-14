@@ -8,6 +8,7 @@ namespace MovieData
     {
         static void Main(string[] args)
         {
+            
             // ask for input
             Console.WriteLine("Enter 1 to list movie collection.");
             Console.WriteLine("Enter 2 to add movie to collection.");
@@ -17,6 +18,7 @@ namespace MovieData
 
             if (resp == "1")
             {
+                
                 try
                 {
                 StreamReader sr = new StreamReader("movies.csv");
@@ -57,6 +59,7 @@ namespace MovieData
             }
             else if (resp == "2")
             {
+                string movieID;
                 string input;
                 do 
                 {
@@ -66,17 +69,10 @@ namespace MovieData
                      input = Console.ReadLine();
                     if (input == "1")
                     {
+                        
                         Console.WriteLine("Please enter movie title");
                         string movieTitle = Console.ReadLine();
-                        Console.WriteLine("Please enter the year the movie was released");
-                        string movieYear = Console.ReadLine();
-                        Console.WriteLine("Please enter movie Genre(s), seperate each with a comma if there are multiple");
-                        string movieGenres = Console.ReadLine();
-                        string[] movieGenresArr = movieGenres.Split(',');
-                        int numberGenre = movieGenresArr.Length;
-                        Random rnd = new Random();
-                        string movieID;
-                        
+                        bool Duplicate = false;
                         foreach (var line in File.ReadAllLines("movies.csv"))
                         {
                             
@@ -85,38 +81,59 @@ namespace MovieData
                             if (line.Contains(movieTitle))
                             {
                                 Console.WriteLine("This movie Title already exists in data, please enter a new movie or exit");
+                                 Duplicate = true;
                                 break;
-                            }
+                            }    
+                        }  
+                        if (Duplicate == true)  
+                        {
+                            continue;
                         }
-                      bool duplicateid = true;
+                        Console.WriteLine("Please enter the year the movie was released");
+                        string movieYear = Console.ReadLine();
+                        Console.WriteLine("Please enter movie Genre(s), seperate each with a comma if there are multiple");
+                        string movieGenres = Console.ReadLine();
+                        string[] movieGenresArr = movieGenres.Split(',');
+                        int numberGenre = movieGenresArr.Length;
+                        Random rnd = new Random();
+                            
+                        bool duplicateid = true;
                       do 
                       {
                           int movienum = rnd.Next(1,200000);
                          movieID = Convert.ToString(movienum);
 
-                        foreach (var line in File.ReadAllLines("movies.csv"))
+                        foreach (var data in File.ReadAllLines("movies.csv"))
                         {
-                            if (line.Contains(movieID))
+                            if (data.Contains(movieID))
                             {
                              duplicateid = true;
+                             Console.WriteLine ("Creating new ID, ID number already exists in data");
                             }
                             else duplicateid = false;
                         }
                       }  while (duplicateid == true);    
 
-                            using (StreamWriter sw = File.AppendText("movies.csv"))
+                          try   
+                          { using (StreamWriter sw = File.AppendText("movies.csv"))
                              {
                                 sw.WriteLine($"{movieID},{movieTitle}({movieYear}),{string.Join("|", movieGenresArr)}");
                 
                                 sw.Close();
-                             }	
+                             }	 
+                            
+                          } catch (FileNotFoundException)
+                          {
+                              Console.WriteLine("File not Found");
+                          }
+                     
                             
                     }
-                        
-                    else
-                    {
-                        Console.WriteLine("Invalid Input, please try again");
-                    }
+                        if (input =="0")
+                        {
+                            break;
+                        }
+                  
                 } while(input != "0" );
 
 
