@@ -57,14 +57,14 @@ namespace MovieData
             }
             else if (resp == "2")
             {
-                int result;
+                string input;
                 do 
                 {
                     
                     Console.WriteLine("Enter 1 to add a movie");
                     Console.WriteLine("Enter 0 to stop");
-                    bool input = Int32.TryParse(Console.ReadLine(), out result);
-                    if (result == 1)
+                     input = Console.ReadLine();
+                    if (input == "1")
                     {
                         Console.WriteLine("Please enter movie title");
                         string movieTitle = Console.ReadLine();
@@ -75,7 +75,8 @@ namespace MovieData
                         string[] movieGenresArr = movieGenres.Split(',');
                         int numberGenre = movieGenresArr.Length;
                         Random rnd = new Random();
-                        int movieID = rnd.Next(164980,200000);
+                        string movieID;
+                        
                         foreach (var line in File.ReadAllLines("movies.csv"))
                         {
                             
@@ -86,27 +87,37 @@ namespace MovieData
                                 Console.WriteLine("This movie Title already exists in data, please enter a new movie or exit");
                                 break;
                             }
-                        
-                     
-                       }
-                            
+                        }
+                      bool duplicateid = true;
+                      do 
+                      {
+                          int movienum = rnd.Next(1,200000);
+                         movieID = Convert.ToString(movienum);
+
+                        foreach (var line in File.ReadAllLines("movies.csv"))
+                        {
+                            if (line.Contains(movieID))
+                            {
+                             duplicateid = true;
+                            }
+                            else duplicateid = false;
+                        }
+                      }  while (duplicateid == true);    
+
                             using (StreamWriter sw = File.AppendText("movies.csv"))
                              {
-                                sw.WriteLine($"{},{movieTitle}({movieYear}),{string.Join("|", movieGenresArr)}");
+                                sw.WriteLine($"{movieID},{movieTitle}({movieYear}),{string.Join("|", movieGenresArr)}");
                 
                                 sw.Close();
                              }	
                             
                     }
-                        if (result == 0)
-                        {
-                            break;
-                        }
+                        
                     else
                     {
                         Console.WriteLine("Invalid Input, please try again");
                     }
-                } while(result != 0 );
+                } while(input != "0" );
 
 
             }
