@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
+using NLog.Web;
 
 namespace MovieData
 {
@@ -8,7 +9,10 @@ namespace MovieData
     {
         static void Main(string[] args)
         {
-            
+            string path = Directory.GetCurrentDirectory() + "\\nlog.config";
+
+             // create instance of Logger
+             var logger = NLog.Web.NLogBuilder.ConfigureNLog(path).GetCurrentClassLogger();
             // ask for input
             Console.WriteLine("Enter 1 to list movie collection.");
             Console.WriteLine("Enter 2 to add movie to collection.");
@@ -52,6 +56,7 @@ namespace MovieData
                 catch (FileNotFoundException)
                 {
                     Console.WriteLine("File could not be found or opened");
+                    logger.Error("File could not be found or opened");
                 }
                 
                 
@@ -125,6 +130,7 @@ namespace MovieData
                           } catch (FileNotFoundException)
                           {
                               Console.WriteLine("File not Found");
+                              logger.Error("File could not be found or opened");
                           }
                      
                             
