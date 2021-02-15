@@ -10,3 +10,8 @@
 /Users/izabelditchev/Projects/MovieData/MovieData/obj/Debug/netcoreapp3.1/MovieData.dll
 /Users/izabelditchev/Projects/MovieData/MovieData/obj/Debug/netcoreapp3.1/MovieData.pdb
 /Users/izabelditchev/Projects/MovieData/MovieData/obj/Debug/netcoreapp3.1/MovieData.genruntimeconfig.cache
+/Users/izabelditchev/Projects/MovieData/MovieData/bin/Debug/netcoreapp3.1/NLog.dll
+/Users/izabelditchev/Projects/MovieData/MovieData/bin/Debug/netcoreapp3.1/NLog.Extensions.Logging.dll
+/Users/izabelditchev/Projects/MovieData/MovieData/bin/Debug/netcoreapp3.1/NLog.Web.AspNetCore.dll
+/Users/izabelditchev/Projects/MovieData/MovieData/obj/Debug/netcoreapp3.1/MovieData.csproj.CopyComplete
+/Users/izabelditchev/Projects/MovieData/MovieData/bin/Debug/netcoreapp3.1/nlog.config

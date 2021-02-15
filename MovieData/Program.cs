@@ -9,7 +9,8 @@ namespace MovieData
     {
         static void Main(string[] args)
         {
-            string path = Directory.GetCurrentDirectory() + "\\nlog.config";
+            
+            string path = "nlog.config";
 
              // create instance of Logger
              var logger = NLog.Web.NLogBuilder.ConfigureNLog(path).GetCurrentClassLogger();

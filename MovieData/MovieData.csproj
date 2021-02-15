@@ -5,6 +5,9 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
+    <None Update="nlog.config">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
      <PackageReference Include="NLog.Web.AspNetCore" Version="4.9.3" />
    </ItemGroup>
 </Project>
